@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Using CSS Grid</title>
+	<style>
+		body{
+			color: #fff;
+			font-family: 'Nunito Semibold';
+			text-align: center;
+		}
+		#content{
+			display: grid;
+            grid-template-columns: repeat(12,1fr);
+            grid-auto-rows:minmax(100px,auto);
+            grid-gap:10px;
+			max-width: 960px;
+			margin: 0 auto;
+            position: relative;
+            grid-template-areas: "hd hd hd hd hd hd hd hd hd hd hd hd"
+                                  "as as as as mn mn mn mn mn mn mn mn"
+                                  "nv nv nv nv mn mn mn mn mn mn mn mn"
+                                  "sc sc sc sc sc sc sc sc sc sc sc sc"
+                                  "sc sc sc sc sc sc sc sc sc sc sc sc"
+                                  "ft ft ft ft ft ft ft ft ft ft ft ft";
+		}
+
+       
+
+		#content > *{
+			background: #3bbced;
+			padding: 30px;
+		}
+
+        /* header{
+            grid-column: span 12;
+        }
+
+        main{
+            grid-column: 4/13;
+            grid-row:2/4;
+        }
+
+        section{
+            grid-column:span 12;
+            grid-row: 4/6;
+        }
+
+        aside{
+            grid-column: 1/4;
+            grid-row: 2/3;
+        }
+
+        nav{
+            grid-column: 1/4;
+            grid-row: 3/4;
+        }
+
+        footer{
+            grid-column: span 12;
+        } */
+
+        /* here we can use grid-template-area to create layout as same as done in above codes usin grid column and grid row */
+        header{
+            grid-area: hd;
+        }
+        main{
+            grid-area: mn;
+        }
+        aside{
+            grid-area:as;
+        }
+
+        section{
+            grid-area:sc;
+        }
+
+        footer{
+            grid-area:ft;
+        }
+
+        nav{
+            grid-area:nv;
+        }
+        #grid{
+           position: absolute;
+           top:0;
+           left: 0;
+           display: grid;
+           grid-template-columns: repeat(12,1fr);
+           grid-auto-rows: minmax(100%,auto);
+           width:100%;
+           height:100%;
+           background: transparent;
+           padding:0;
+           display:none;
+        }
+
+        
+
+        #grid p{
+            border:1px solid blueviolet;
+            background: #000;
+            opacity:0.2;
+            margin:0;
+        }
+
+        input:checked + #content #grid{
+            display:grid;
+        }
+        
+	</style>
+</head>
+<body>
+
+    <input type="checkbox"/>
+	<div id="content">
+ 
+        
+        <div id="grid">
+            <p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>
+        </div>
+
+		<header>Header</header>
+        <main>Main</main>
+        <section>Section</section>
+        <aside>Aside</aside>
+        <nav>Nav</nav>
+        <footer>Footer</footer>
+
+	</div>
+
+</body>
+</html>
