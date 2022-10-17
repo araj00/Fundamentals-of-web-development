@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transforms</title>
+    <style>
+         body{
+            background-color: lightblue;
+            text-align: center;
+         }
+        .wrapper{
+            box-sizing: border-box;
+            padding: 20px;
+            width: 100%;
+        }
+
+        img{
+
+            border-left: 2px solid red;
+            border-right: 2px solid black;
+            border-top: 2px solid yellow;
+            border-bottom: 2px solid black;
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+
+            /* transform: translateX(200px); translateX shifts the element from Y-axis to either left or right. Left on -ve values and Right on +ve values */
+
+            /* transform: translateY(200px); */
+
+               /* transform: translate(-200px,100px); translate can take two values. One for x-axis and y-axis.If there is only one value then it is for translatex */
+
+               /* transform: scaleX(3); // this scale up the element. Value less than 1 reduces the dimension and value greater than 1 increase it. */
+
+               /* transform: scale(2); scale can take two values same as translate but one value being given is equal to two value both for x and y. */
+
+            /* transform: rotateZ(-90deg) translateX(-200px);  */
+            /* rotation changes the orientation of the 3d dimension */
+
+            transform: rotateZ(90deg);
+
+        }
+
+        .circle{
+            width: 100px;
+            border-radius: 50px;
+            background-color: pink;
+            margin:60px auto;
+            padding:50px 0;
+            color: white;
+            line-height: 0;
+            cursor: pointer;
+            /* only one parameter with time applies to all properties on hovering */
+            /* transition: 1s;  */
+            transition: background-color 1s ,transform 1s 1s linear;
+
+            /* instead of linear we can use ease, ease-in, ease-out or ease-in-out */
+        }
+
+        .circle:hover{
+            background-color: salmon;
+            transform: rotate(360deg);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <img src="img/cloud.png" alt="A white cloud">
+        <div class="circle">Hover me</div>
+    </div>
+
+    
+</body>
+</html>

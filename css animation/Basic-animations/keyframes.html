@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyframes</title>
+    <style>
+        html,body{
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin:0;
+        }
+        .sky{
+            height:40%;
+            background-color: skyblue;
+            position: relative;
+        }
+        .grass{
+            height: 30%;
+            background-color: green;
+        }
+
+        .road{
+            height: 30%;
+            background-color: rgb(107, 102, 102);
+            border-top: 10px solid grey;
+            border-bottom: 10px solid grey;
+            position: relative;
+        }
+
+        .lines{
+            border:5px dashed white;
+            position: absolute;
+            top: 45%;
+            width: 100%;
+            height: 0px;
+        }
+
+        .mario{
+            position: absolute;
+            top: -20%;
+            left: 0;
+            animation-name: drive;
+            animation-duration: 3s;
+
+            /* animation-fill-mode can take three value i.e none,forward,backward and both; */
+
+            /* forward value is used to prevent the element from coming back to starting position  */
+
+            /* none tells to do nothing and when animation has done then come back to its initial position 
+             */
+
+             /* backward starts the animation from given initial position in keyframe but reverts back to its initial position therefore to prevent this we use both value in fill mode*/
+
+             /* both is the mixture of forward and backward */
+
+            animation-fill-mode: both;
+            animation-delay: 5s; 
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            /* chaining the animations */
+            animation: jump 1.2s 2s  linear,    drive 3s  linear infinite;
+        }
+
+       .luigi{
+        position: absolute;
+        top: 25%;
+        left: 0;
+        animation-name: drive;
+        animation-duration: 5s;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-direction:normal;
+        animation-timing-function: linear;
+       }
+
+        @keyframes drive{
+            from{transform: translate(-200px);}
+            to{transform: translate(1600px);}
+        }
+
+        .clouds{
+            position: absolute;
+        }
+
+        .clouds:nth-child(1){
+            transform: scaleX(1.4);
+            top: 10%;
+            /* animation-shorthand 
+            important thing delay should never come before duration otherwise order does not matter */
+            animation: wind 50s linear infinite reverse;
+        }
+        .clouds:nth-child(2){
+           top:20%;
+           opacity: 0.4;
+           animation: wind 80s linear  infinite reverse;
+        }
+
+        @keyframes wind{
+            from{
+                left:-5%;
+            }
+            to{
+                left:100%;
+            }
+        }
+
+        @keyframes jump{
+            0%{
+                top: -20%;
+            }
+            50%{
+                top: -40%;
+            }
+            100%{
+                top: -20%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sky">
+        <img src="img/cloud.png" class="clouds" alt="cloud 1">
+        <img src="img/cloud.png" class="clouds" alt="cloud 2">
+    </div>
+    <div class="grass"></div>
+    <div class="road">
+        <div class="lines"></div>
+        <img src="img/mario.png" class="mario" alt="mario on racing bike">
+        <img src="img/luigi.png" class="luigi" alt="luigi on racing bike">
+    </div>
+</body>
+</html>
