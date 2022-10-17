@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax-1</title>
+</head>
+<body>
+    <button id="button">Get Text</button>
+    <p class="text"></p>
+
+    <script>
+
+function loadText(){
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET','sample.text');
+
+            console.log(xhr.readyState);
+            
+            // xhr.onload = function(){
+
+            //     console.log(xhr.responseText);
+            //     document.querySelector('.text').textContent = xhr.responseText;
+    
+            // }
+
+            xhr.onerror = function(){
+                console.dir('error found');
+            }
+
+            xhr.onprogress = function(){
+                console.log(this.readyState);
+            }
+
+            xhr.onreadystatechange = function(){
+                if(this.readyState === 4 && this.status === 200){
+                    console.log(this.responseText);
+                }
+            }
+
+            xhr.send();
+        }
+        document.querySelector('#button').addEventListener('click',loadText);
+
+        // readyState values
+        // 0: request not initialized 
+        // 1: server connection established
+        // 2: request received
+        // 3: processing request
+        // 4: request finished and response is ready
+
+
+        // HTTP Statuses 
+        // 200: 'OK'
+        // 403: 'Forbidden'
+        // 404: 'Not Found'
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation</title>
+    <style>
+         
+         @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+        
+        *     {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(
+            #0f2027,
+            #203a43, 
+            #2c5364);
+            height: 100vh;
+            font-family: 'Lato', sans-serif;
+            border: solid 15px #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+
+        }
+      
+
+        .div2 {
+          border: solid 10px #fff;
+          border-radius: 20px;
+          font-size: 3.5rem;
+          text-align: center;
+          padding: 80px;
+          color: #fff;
+
+      }
+      .div1 {
+          border: solid 5px #fff;
+          border-radius: 20px;
+          font-size: 3.5rem;
+          text-align: center;
+          padding: 50px;
+          color: #fff;
+      }
+
+      button{
+        display: block;
+        font-size:3rem;
+        background-color: transparent;
+        color: #fff;
+        border: 5px solid #fff;
+        border-radius: 20px;
+        cursor: pointer;
+        margin: 20px auto;
+        box-sizing: border-box;
+        padding: 10px 20px ;
+      }
+    </style>
+</head>
+<body>
+    <div class="div2">
+      2
+      <div class="div1">
+        1
+        <button class="btn">Click</button>
+      </div>
+    </div>
+    <script src="event_propagation.js"></script>
+</body>
+</html>
