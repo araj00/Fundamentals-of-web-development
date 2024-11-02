@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="food-style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- navbar -->
+  
+  <nav>
+    <div class="navbar">
+      <i class='bx bx-menu'></i>
+      <div class="logo"><a href="#">Foodiz</a></div>
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <span class="logo-name">Foodiz</span>
+          <i class='bx bx-x' ></i>
+        </div>
+        <ul class="links">
+          <li><a href="#">SPECIAL</a></li>
+          <li>
+            <a href="#">LUNCH</a>
+            <i class='bx bxs-chevron-down lunch-arrow arrow  '></i>
+            
+            <ul class="sub-menu sub-menu">
+              <li><a href="#">SOUTH LUNCH</a></li>
+              <li><a href="#">NORTH LUNCH</a></li>
+
+             
+
+            </ul>
+          </li>
+          <li>
+            <a href="#">MENU</a>
+            <i class='bx bxs-chevron-down js-arrow arrow '></i>
+            <ul class="js-sub-menu sub-menu">
+              <li><a href="#">MENU 1</a></li>
+              <li><a href="#">MENU 2</a></li>
+            </ul>
+          </li>
+          <li><a href="#">BEVERAGES</a></li>
+          <li><a href="#">CATERING</a></li>
+        </ul>
+      </div>
+      <div class="search-box">
+        <i class='bx bx-search'></i>
+        <div class="input-box">
+          <input type="text" placeholder="Search...">
+        </div>
+      </div>
+      <div>
+        <a href="./Cart.html">
+        <img src="./assets/cart.png" style="width: 30px;height: 30px;" alt="cart">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+ <div class="wishlist">
+      <img src="./assets/heart.png" alt="">
+    </div>
+
+<div style="margin:0 auto;width:70%;">
+  <!-- breadcrumbs -->
+  <div class="breadcrumbs">
+    <span><a href="./index.html">Home</a></span> <span>/</span> Menu <span>/</span> Burgers <span>/</span> <span style="margin-left:10px;">Chicken
+          Burger</span></span>
+  </div>
+  <hr />
+
+    <!-- main-content -->
+
+    <div class="main">
+           <div class="food-image">
+            <img src="./assets/burger1.jpg" alt="chicken burger">
+           </div>
+
+           <!-- food description -->
+
+           <div class="description">
+            <h3 data-id="1">Chicken Burger</h3>
+            <h2>Rs. 200</h2>
+
+            <hr/>
+            
+            <p>A chicken burger is a sandwich made with a chicken patty as the main filling, typically served in a bun with various toppings and condiments.</p>
+            <h5>Availability : <span style="text-transform: capitalize;line-height: 1.5;color: green;">in stock</span></h5>
+
+
+
+            <h5>Spicy Level</h5>
+
+            <div class="container">
+              <div class="feedback">
+                <div class="rating">
+                  <input type="radio" name="rating" id="rating-5">
+                  <label for="rating-5"></label>
+                  <input type="radio" name="rating" id="rating-4">
+                  <label for="rating-4"></label>
+                  <input type="radio" name="rating" id="rating-3">
+                  <label for="rating-3"></label>
+                  <input type="radio" name="rating" id="rating-2">
+                  <label for="rating-2"></label>
+                  <input type="radio" name="rating" id="rating-1">
+                  <label for="rating-1"></label>
+            
+           </div>
+    </div>
+  </div>
+  <hr/>
+
+  <div class="spicy-level">
+    <p style="text-transform: capitalize;margin-right: 20px;">spice level</p>
+    <input
+      type="radio"
+      id="mild"
+      name="spice"
+      value="mild"
+      checked />
+    <label for="mild">Mild</label>
+
+    <input type="radio" id="spicy" name="spice" value="spicy" />
+    <label for="spicy">Spicy</label>
+
+    <input type="radio" id="medium-spicy" name="spice" value="medium spicy" />
+    <label for="medium-spicy">Medium </label>
+    <input type="radio" id="extra-spicy" name="spice" value="extra spicy" />
+    <label for="extra-spicy">Extra </label>
+  </div>
+
+  <!-- add to cart -->
+  <div class="buttons">
+    
+     <div class="quantity-counter">
+      <button class="decrease btn">-</button>
+      <div class="quantity"></div>
+      <button class="increase btn">+</button>
+     </div>
+
+     <button class="cart-btn">Add to Cart</button>
+    </div>
+  <hr/>
+  <div class="buttons">
+    
+    <img src="./assets/wishlist.png" style="width:30px;height: 30px;"alt="wishlist icon">
+
+    <div class="wishlist">Add to Wishlist</div>
+   </div>
+   <hr/>
+  </div>
+
+  <script src="./counter.js">
+    
+  </script>
+</body>
+
+</html>
